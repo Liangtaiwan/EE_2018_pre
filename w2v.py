@@ -18,19 +18,19 @@ model = models.Word2Vec.load('ptt.model')
 
 
 print("相似詞前 100 排序")
-res = model.most_similar(u'皇帝',topn = 20)
+res = model.most_similar(u'    Todo    ',topn = 20)
 for item in res:
 	print(item[0]+","+str(item[1]))
 
 
 print("計算 Cosine 相似度：")
-res = model.similarity(u'溫拿',u'肥宅')
+res = model.similarity(u'    Todo    ',u'    Todo    ')
 print(res)
 
-x,y,z = u'天堂',u'地獄',u'溫拿'
-a = u'肥宅'
+x,y,z = u'    Todo    ',u'    Todo    ',u'    Todo    '
+a = u'    Todo    '
 print(a)
-print("{}之於{}，如{}之於".format(x.encode('utf8'),y.encode('utf8'),z.encode('utf8')))
+print("{}之於{}，如{}之於".format(x,y,z))
 res = model.most_similar([x,y], [z], topn= 20)
 for item in res:
     print(item[0]+","+str(item[1]))
