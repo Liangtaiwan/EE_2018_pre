@@ -16,9 +16,6 @@ model.save("ptt.model")
 print('Loading models')
 model = models.Word2Vec.load('ptt.model')
 
-print('Loading models')
-model = models.Word2Vec.load('ptt.model')
-
 
 print("相似詞前 100 排序")
 res = model.most_similar(u'皇帝',topn = 20)
